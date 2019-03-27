@@ -8,5 +8,13 @@
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/websniffer1/friend-finder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/websniffer1/friend-finder/issues"
+  },
+  "homepage": "https://github.com/websniffer1/friend-finder#readme"
 }
