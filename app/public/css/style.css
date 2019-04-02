@@ -1,0 +1,23 @@
+.jumbotron {
+	background: rgb(187, 199, 232);
+}
+
+.logo {
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+	background: rgb(110, 233, 131);
+}
+
+hr {
+	border-color: inherit;
+	    margin: 1em 0;
+}
+
+#resultsModal img {
+	overflow: hidden;
+	width: 500px;
+}

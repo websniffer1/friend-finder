@@ -1,21 +1,25 @@
+//set up dependencies
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
 
-var app = express();
-var PORT = process.env.PORT || 3000;
+//creates express server and sets up a port
+var app = express(); 
+var port = process.env.PORT || 3000; 
 
-// Sets up the Express app to handle data parsing
+//Body Parser
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
-app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
-//ROUTER
-require('./app/routing/api-routes.js')(app); 
-require('./app/routing/html-routes.js')(app);
+// Static files
+// needs to be called before the routes in order to work
+app.use(express.static('app/public'));
 
-// Starts the server to begin listening
-app.listen(PORT, function () {
-  console.log('App listening on PORT: ' + PORT);
-});
+//Router
+require('./app/routing/apiRoutes.js')(app); 
+require('./app/routing/htmlRoutes.js')(app);
+
+//Listening to the port that was set up
+app.listen(port, () => console.log("Listening on port %s", port));
